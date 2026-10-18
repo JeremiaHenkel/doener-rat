@@ -638,5 +638,44 @@
   {
     "name": "Somat (demnächst)",
     "status": "pending"
+  },
+  {
+    "name": "Euro Döner und Tenders",
+    "status": "reviewed",
+    "preis": "5.00",
+    "geschmack": 4.4,
+    "präsentation": 4.5,
+    "übereinstimmung bestellung": 10,
+    "menge": "516",
+    "service": 7.4,
+    "ambiente": 4.9,
+    "layering": 4.1,
+    "zeit": 0,
+    "fleisch": 3.4,
+    "brot": 5,
+    "gemüse": 4.1,
+    "sauce": 5.9,
+    "gesamt": 4.25,
+    "besonderheiten": {
+      "positiv": [
+        "Döner und Falafeldöner für 5 €",
+        "Alle Bestellungen wie bestellt",
+        "Scharfe Sauce mit Tomatennote gut bewertet"
+      ],
+      "negativ": [
+        "Alle acht Zeitbewertungen bei 0 Punkten; ein Tester notierte 41 Minuten",
+        "Verbrannte Fleischstücke bemängelt",
+        "Zwei Tester waren unsicher, ob einzelne Fleischstücke richtig durchgegart waren",
+        "Brot durch Sauce teils stark aufgeweicht",
+        "Wenig Platz bemängelt"
+      ],
+      "neutral": [
+        "Falafeldöner mit Knoblauchsauce probiert",
+        "Fleisch und Falafel unterschiedlich bewertet"
+      ]
+    },
+    "subtitle": "",
+    "datum": "18.08.2026",
+    "mapsUrl": ""
   }
 ]

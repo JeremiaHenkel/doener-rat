@@ -353,7 +353,8 @@ import Footer from "../components/Footer.astro";
       if (b.value !== undefined && b.value !== "-") {
         const div = document.createElement("div");
         div.className = "bg-gray-100/80 backdrop-blur p-3 rounded shadow-sm text-center";
-        div.innerHTML = `<div class="text-lg font-bold">${b.value}</div><div class="text-sm text-gray-600">${b.label}</div>`;
+        const displayValue = b.label === "Gesamt" && typeof b.value === "number" ? b.value.toFixed(1) : b.value;
+        div.innerHTML = `<div class="text-lg font-bold">${displayValue}</div><div class="text-sm text-gray-600">${b.label}</div>`;
         grid.appendChild(div);
       }
     });

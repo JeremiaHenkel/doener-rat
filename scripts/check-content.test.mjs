@@ -56,3 +56,10 @@ test('validates status and rejects a second entry with the same display name', (
   assert.match(check([{ ...review, status: 'open' }]).join(), /status must be/);
   assert.match(check([{ name: 'Pending' }, { name: 'Pending (demnächst)' }]).join(), /duplicate display name/);
 });
+
+test('accepts an explicit zero time score while preserving the other score ranges', () => {
+  assert.deepEqual(check([{ ...review, zeit: 0 }]), []);
+  assert.match(check([{ ...review, zeit: -1 }]).join(), /zeit must be a number from 0 to 10/);
+  assert.match(check([{ ...review, geschmack: 0 }]).join(), /geschmack must be a number from 1 to 10/);
+  assert.match(check([{ ...review, gesamt: 0 }]).join(), /gesamt must be a number from 1 to 10/);
+});

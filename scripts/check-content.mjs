@@ -54,8 +54,9 @@ export function validateContent(source, stories, images) {
     for (const key of Object.keys(shop)) if (!fields.has(key)) fail(`unknown field "${key}"; check its spelling against the guide.`);
     for (const key of ratings) {
       const value = shop[key];
-      if (!absent(value) && (typeof value !== 'number' || !Number.isFinite(value) || value < 1 || value > 10)) {
-        fail(`${key} must be a number from 1 to 10 without quotes, or "-" when unknown.`);
+      const minimum = key === 'zeit' ? 0 : 1;
+      if (!absent(value) && (typeof value !== 'number' || !Number.isFinite(value) || value < minimum || value > 10)) {
+        fail(`${key} must be a number from ${minimum} to 10 without quotes, or "-" when unknown.`);
       }
     }
     for (const key of ['preis', 'menge']) {

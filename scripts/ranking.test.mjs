@@ -55,3 +55,10 @@ test('sorts visit dates chronologically and returns timezone-independent markup 
   assert.equal(visitDate({ datum: '31.02.2026' }), null);
   assert.equal(visitDate({}), null);
 });
+
+test('zero time scores remain numeric and sort ahead of missing values', () => {
+  const entries = [{ name: 'Missing', status: 'reviewed' }, { name: 'Zero', status: 'reviewed', zeit: 0 }, { name: 'Nine', status: 'reviewed', zeit: 9 }];
+  assert.equal(numericValue(0), 0);
+  assert.deepEqual(selectShops(entries, { key: 'zeit', order: 'asc' }).map(s => s.name), ['Zero', 'Nine', 'Missing']);
+  assert.deepEqual(selectShops(entries, { key: 'zeit', order: 'desc' }).map(s => s.name), ['Nine', 'Zero', 'Missing']);
+});

@@ -143,9 +143,9 @@ Keep the field names exactly as shown, including `präsentation`, `gemüse`, and
 | `status` | `"reviewed"` = reviewed and active, `"pending"` = not reviewed yet, `"closed"` = closed. This controls the badge, filter, and ranking eligibility. |
 | `preis` | Price in euros, e.g. `"7.50"`. No `€`, currency name, or decimal comma. |
 | `menge` | Weight in grams, e.g. `"500"`. No `g` or `kg`. |
-| All score fields | Numbers from 1 to 10, e.g. `7.5`, **without quotes**. Use a decimal point. |
+| All score fields | Numbers from 1 to 10, e.g. `7.5`, **without quotes**. Use a decimal point. The time score also allows an explicitly awarded `0`. |
 | `gesamt` | The Rat's overall score. Enter it yourself; the site does not calculate an average. A numeric `gesamt` makes the restaurant name clickable. |
-| `zeit` | The waiting-time **score from 1 to 10**, not a number of minutes. |
+| `zeit` | The waiting-time **score from 0 to 10**, not a number of minutes. Keep an explicitly awarded `0`; it is a real score, not a missing value. |
 | `besonderheiten` | Three lists: `positiv`, `negativ`, and `neutral`. Each item is text in double quotes. Use `[]` for an empty list. |
 | `subtitle` | Optional short text below the restaurant name; `""` leaves it blank. |
 | `datum` | Visit date as `"DD.MM.YYYY"`. Shown as “Besucht am …” in the list and on the detail page. |
@@ -154,6 +154,8 @@ Keep the field names exactly as shown, including `präsentation`, `gemüse`, and
 For an unmeasured category, price, or weight, use `"-"`. Do not invent a score. A restaurant without an overall score belongs in the unreviewed workflow below.
 
 When combining the Rat's raw notes, average the available ratings within each category, giving each tester equal weight. Leave missing or unscored entries out of that category's denominator. Use actual euro prices and gram measurements instead of any additional price/quantity scores. The overall `gesamt` is the mean of the testers' personal overall scores, not the mean of the category scores. Store category means to one decimal, overall means to up to two decimals, and average weights rounded to whole grams. Keep the notes and calculation decisions in `docs/review-sources/`; the [Uni Döner calculation](review-sources/uni-doener-2026-07-24.md) is a worked example.
+
+Do not guess unreadable measurements such as `42x g`; leave them out of the gram average until confirmed and record the omission in the source notes. A bare price score such as `10/10` is not a euro amount. Map an explicit “Bestellung: ja” to 10 for order accuracy. Use a tester's final corrected overall score when the notes contain a revision.
 
 JSON rules:
 
@@ -224,7 +226,7 @@ Use the `https://www.google.com/maps/embed?...` URL, with normal `&` query separ
 
 ### E. Update the displayed freshness label
 
-The header's `Stand Juli 2026` text in `src/pages/index.astro` is manual. Update it if this review changes the date you want the site to advertise. Changing `datum` in the JSON does not update that header automatically.
+The header's `Stand …` text in `src/pages/index.astro` is manual. Update it if this review changes the date you want the site to advertise. Changing `datum` in the JSON does not update that header automatically.
 
 ## 3. Add a restaurant you have not reviewed yet
 
