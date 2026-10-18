@@ -126,14 +126,4 @@ import Footer from "../components/Footer.astro";
   <!-- === EINHEITLICHER FOOTER === -->
   <Footer marginTop="mt-8" />
 
-  <script is:inline>
-    const bg2 = document.getElementById("bg-2");
-    window.addEventListener("scroll", () => {
-      if (bg2) {
-        const scrollTop = window.scrollY;
-        const maxScroll = 300;
-        bg2.style.opacity = Math.min(scrollTop / maxScroll, 1);
-      }
-    });
-  </script>
 </Layout>
