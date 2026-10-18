@@ -39,6 +39,8 @@ public/
 
 Astro generates static HTML. Tailwind builds the styles through Vite. The existing browser JavaScript still handles sorting, search, the image carousel, and Firebase community interactions. The shared templates use TypeScript for their props.
 
+The ranking has mobile sorting controls, visible prices and visit dates, and filters for reviewed, upcoming, and closed restaurants. Official ranks stay fixed across search and sorting, with tied overall scores sharing a rank. `public/js/ranking.js` contains the shared status, date, and sorting logic; `npm run test:ranking` checks it.
+
 For step-by-step instructions to add a review, edit ratings, add or delete a restaurant, and publish changes, read **[the review and restaurant guide](docs/REVIEWS.md)**. It includes a complete example, photo rules, a pre-publication checklist, and troubleshooting.
 
 Run `npm run check:content` after content changes. It checks the JSON, field names, scores, duplicate restaurant names, exact review filenames, and photo numbering. `npm run check` includes this check, and CI runs it too.
@@ -59,4 +61,4 @@ ASTRO_BASE_PATH=/doener-rat/ npm run build
 
 ## Migration scope
 
-This first migration preserves the published site's layout, wording, photos, review files, Firebase integration, and browser behavior. It adds shared templates, a development server, a production build, TypeScript checks, and CI. Design changes and further refactoring can be reviewed in later pull requests.
+The initial Astro migration preserved the published site's layout, wording, photos, review files, and Firebase integration while adding shared templates, a development server, a production build, TypeScript checks, and CI. Subsequent feature branches remove the scrolling background reveal and add ranking controls, visit dates, and restaurant statuses.

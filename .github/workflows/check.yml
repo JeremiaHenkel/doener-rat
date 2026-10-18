@@ -18,5 +18,6 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run test:content
+      - run: npm run test:ranking
       - run: npm run check
       - run: npm run build

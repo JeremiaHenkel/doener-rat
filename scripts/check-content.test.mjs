@@ -46,3 +46,13 @@ test('rejects photo gaps, leading zeros, wrong extensions, and photos beyond the
 test('allows JSON punctuation inside text without reporting duplicate keys', () => {
   assert.deepEqual(check([{ name: 'Pending {place}', subtitle: 'Say "hello": [one, two] {three}' }]), []);
 });
+
+test('validates status and rejects a second entry with the same display name', () => {
+  assert.deepEqual(check([{ ...review, status: 'reviewed' }]), []);
+  assert.deepEqual(check([{ ...review, status: 'closed' }]), []);
+  assert.deepEqual(check([{ name: 'Pending', status: 'pending' }]), []);
+  assert.match(check([{ ...review, status: 'pending' }]).join(), /cannot be "pending"/);
+  assert.match(check([{ name: 'Pending', status: 'reviewed' }]).join(), /needs a numeric gesamt/);
+  assert.match(check([{ ...review, status: 'open' }]).join(), /status must be/);
+  assert.match(check([{ name: 'Pending' }, { name: 'Pending (demnächst)' }]).join(), /duplicate display name/);
+});

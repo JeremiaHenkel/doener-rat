@@ -1,6 +1,6 @@
 # Adding reviews and maintaining the restaurant list
 
-This guide is for the Astro version of Dönerrat. The migration is currently on `chore/astro-foundation`; these `public/` paths apply once you are working on that branch or a branch based on it. The original version keeps `data/`, `stories/`, and `images/` at the repository root.
+This guide is for the Astro version of Dönerrat with the ranking controls and status fields. Until these updates are merged into the shared project, the complete version is on `feat/ranking-usability`; use that branch or a branch based on it. The original version keeps `data/`, `stories/`, and `images/` at the repository root.
 
 ## Where each change goes
 
@@ -9,6 +9,7 @@ This guide is for the Astro version of Dönerrat. The migration is currently on 
 | Add a reviewed restaurant | `public/data/doener.json`, one review in `public/stories/`, and optional photos in `public/images/` |
 | Add a restaurant you have not reviewed yet | `public/data/doener.json` only |
 | Change prices, scores, or the map | That restaurant's object in `public/data/doener.json` |
+| Mark a restaurant reviewed, upcoming, or closed | Its `status` field in `public/data/doener.json`; keep `name` unchanged |
 | Edit a written review | That restaurant's `.md` file in `public/stories/` |
 | Add, replace, or remove photos | That restaurant's numbered `.jpg` files in `public/images/` |
 | Review an existing restaurant again | Update its existing JSON object and review file; do not add a second object |
@@ -64,21 +65,21 @@ git status --short --branch
 
 If changed or untracked files appear, finish or save that work before switching branches. Do not discard changes to get a clean status.
 
-**While the migration is still being reviewed**, start from its latest branch. `JeremiaHenkel/doener-rat` is the temporary shared location of that migration branch; it is the same source for every contributor:
+**While the Astro and ranking updates are still being reviewed**, start from their complete feature branch. `JeremiaHenkel/doener-rat` is the temporary shared location of that branch; it is the same source for every contributor:
 
 ```bash
-git fetch https://github.com/JeremiaHenkel/doener-rat.git chore/astro-foundation
+git fetch https://github.com/JeremiaHenkel/doener-rat.git feat/ranking-usability
 git switch -c content/review-beispiel FETCH_HEAD
 ```
 
-**After the migration has been merged into the shared project's `main`**, use this instead:
+**After the Astro and ranking updates have been merged into the shared project's `main`**, use this instead:
 
 ```bash
 git fetch https://github.com/L-4-r-s/doener-rat.git main
 git switch -c content/review-beispiel FETCH_HEAD
 ```
 
-Choose a new branch name for each change, for example `content/update-crunchy-price` or `content/remove-beispiel`. Run one of the two alternatives above, according to whether the migration has been merged.
+Choose a new branch name for each change, for example `content/update-crunchy-price` or `content/remove-beispiel`. Run one of the two alternatives above, according to whether these updates have been merged.
 
 Install dependencies when setting up a new checkout or after pulling a changed lockfile:
 
@@ -108,6 +109,7 @@ Here is a complete **fictional example** to copy and fill in. Replace the name, 
 ```json
 {
   "name": "Beispiel Döner",
+  "status": "reviewed",
   "preis": "7.50",
   "geschmack": 7.5,
   "präsentation": 7,
@@ -138,6 +140,7 @@ Keep the field names exactly as shown, including `präsentation`, `gemüse`, and
 | Field | What to enter |
 | --- | --- |
 | `name` | Unique restaurant name in double quotes. Avoid changing it after publication. |
+| `status` | `"reviewed"` = reviewed and active, `"pending"` = not reviewed yet, `"closed"` = closed. This controls the badge, filter, and ranking eligibility. |
 | `preis` | Price in euros, e.g. `"7.50"`. No `€`, currency name, or decimal comma. |
 | `menge` | Weight in grams, e.g. `"500"`. No `g` or `kg`. |
 | All score fields | Numbers from 1 to 10, e.g. `7.5`, **without quotes**. Use a decimal point. |
@@ -145,7 +148,7 @@ Keep the field names exactly as shown, including `präsentation`, `gemüse`, and
 | `zeit` | The waiting-time **score from 1 to 10**, not a number of minutes. |
 | `besonderheiten` | Three lists: `positiv`, `negativ`, and `neutral`. Each item is text in double quotes. Use `[]` for an empty list. |
 | `subtitle` | Optional short text below the restaurant name; `""` leaves it blank. |
-| `datum` | Visit date as `"DD.MM.YYYY"`. |
+| `datum` | Visit date as `"DD.MM.YYYY"`. Shown as “Besucht am …” in the list and on the detail page. |
 | `mapsUrl` | Google Maps embed URL; use `""` if you do not have one. |
 
 For an unmeasured category, price, or weight, use `"-"`. Do not invent a score. A restaurant without an overall score belongs in the unreviewed workflow below.
@@ -158,7 +161,9 @@ JSON rules:
 - Do not add comments, duplicate field names, or trailing commas.
 - Put short notes in `subtitle` or `besonderheiten`; the old `kommentar` field is not the written review displayed on the current detail page.
 
-The JSON object's position does not set its rank. The list starts sorted by `gesamt`, highest first. The displayed score is rounded to one decimal; sorting uses the full stored number. Existing entries whose names contain `geschlossen` go to the bottom.
+The JSON object's position does not set its rank. Official positions come from all `"reviewed"` restaurants, ordered by `gesamt`, highest first. Equal full scores share a position (for example 1, 2, 2, 4). Searching, filtering, and sorting do not change these positions. Pending and closed restaurants have no official rank; closed restaurants sort last in the combined list.
+
+The displayed overall score is rounded to one decimal; ranking and sorting use the full stored number. Prices and weights sort numerically even if they are stored in quotes. The sorting dropdown works on phones too; desktop column headings also work with a click, Enter, or Space. Use the restaurant filter to show all, reviewed, upcoming, or closed entries. The compact mobile view always shows name, price, and overall score.
 
 ### B. Add the written review
 
@@ -221,19 +226,20 @@ The header's `Stand Juli 2026` text in `src/pages/index.astro` is manual. Update
 
 ## 3. Add a restaurant you have not reviewed yet
 
-Add a name-only object to the JSON array:
+Add a name and pending status to the JSON array:
 
 ```json
 {
-  "name": "Beispiel Döner"
+  "name": "Beispiel Döner",
+  "status": "pending"
 }
 ```
 
-It appears in the list with missing values and no clickable review link. You do not need a story or photos yet. Omit `gesamt` entirely rather than setting it to `0` or `"0"`.
+It appears with a “Demnächst” badge, missing values, no rank, and no clickable review link. You do not need a story or photos yet. Omit `gesamt` entirely rather than setting it to `0` or `"0"`.
 
-When the review is ready, expand that same object using the full example above, then add the matching review and photos. Do not leave both the name-only and complete object in the list.
+When the review is ready, set `status` to `"reviewed"`, expand that same object using the full example above, and add the matching review and photos. Keep its `name` unchanged. Do not leave both the pending and complete object in the list.
 
-Some existing names contain `(demnächst)`. If you remove that suffix when publishing their first review, use the resulting exact name for the review and photos. This changes the Firebase identifier too; check for any existing comments or user ratings before renaming.
+Some older stored names contain `(demnächst)` or `(geschlossen)`. Keep these stored names unchanged: the site hides those suffixes in the displayed name and uses the separate `status` for the badge. Review filenames, photo prefixes, detail links, and Firebase still use the complete stored `name`, including its legacy suffix. For example, publishing a review for `Mr. King (demnächst)` means setting its status to `"reviewed"` and creating `Mr. King (demnächst).md`; visitors see “Mr. King” with a “Bewertet” badge.
 
 ## 4. Edit an existing restaurant
 
@@ -247,7 +253,9 @@ For a price correction, change only `preis`. For a new visit, update the relevan
 
 **Renaming needs a coordinated change.** Updating `name` requires renaming the review and all numbered photos, updating old links where you control them, and deciding how to preserve the old Firebase comments and ratings. Renaming files does not migrate Firebase data. Do not treat a spelling correction in `name` as an ordinary text edit.
 
-The existing automatic “closed” behavior also depends on the word `geschlossen` being in `name`. Appending `(geschlossen)` is therefore a rename with the same consequences. Coordinate that change with whoever maintains Firebase. A `subtitle` can mention a closure while keeping the name, but it will not automatically remove the restaurant from active ranking positions.
+To mark a place closed, change only `status` to `"closed"`. It moves to the closed filter, loses its active rank, and keeps its existing review, photos, comments, and ratings. To reopen a reviewed place, set `status` back to `"reviewed"`. Do not append or remove words in `name` to change its status.
+
+All current entries have an explicit status. Older name-only entries are still accepted as pending; older scored entries without status are inferred as reviewed (or closed if the name ends with `(geschlossen)`). Add an explicit status when editing them. A pending restaurant cannot have a numeric `gesamt`; change its status when publishing its review.
 
 ## 5. Delete a restaurant from the list
 
@@ -271,7 +279,7 @@ npm run check
 npm run build
 ```
 
-`check:content` should print `Content check passed`. It checks JSON syntax and duplicate fields, known field names, duplicate restaurant names, score types/ranges, date format, embed URL shape, exact review filenames, nonempty reviews, and photo numbering. It accepts optional photos and unreviewed name-only entries.
+`check:content` should print `Content check passed`. It checks JSON syntax and duplicate fields, known field names, duplicate stored/display names, valid statuses, score types/ranges, date format, embed URL shape, exact review filenames, nonempty reviews, and photo numbering. It accepts optional photos and older unreviewed name-only entries.
 
 `check` also checks the Astro templates. `build` should finish successfully and generate the site in `dist/`. Never edit `dist/` to change content: it is regenerated on the next build.
 
@@ -289,6 +297,9 @@ Check these items in the browser:
 
 - [ ] Search finds the restaurant exactly once, or not at all after deletion.
 - [ ] The displayed price, overall score, and detailed scores are correct.
+- [ ] The status badge is right and the restaurant appears in its intended filter.
+- [ ] Searching or changing the sort keeps the official rank; pending/closed entries have no rank.
+- [ ] The visit date appears correctly in the list and on the review page.
 - [ ] A reviewed restaurant's name opens its detail page.
 - [ ] The actual review appears, rather than “keine Story verfügbar”.
 - [ ] All intended photos appear and the carousel arrows work when there are multiple photos.
@@ -322,12 +333,12 @@ Open a pull request on GitHub with the correct target:
 
 | Project state | Base repository / branch | Head repository / branch |
 | --- | --- | --- |
-| Migration still being reviewed | `JeremiaHenkel/doener-rat` / `chore/astro-foundation` | `YOUR_GITHUB_USERNAME/doener-rat` / your `content/...` branch |
-| Migration merged upstream | `L-4-r-s/doener-rat` / `main` | `YOUR_GITHUB_USERNAME/doener-rat` / your `content/...` branch |
+| Astro/ranking updates still being reviewed | `JeremiaHenkel/doener-rat` / `feat/ranking-usability` | `YOUR_GITHUB_USERNAME/doener-rat` / your `content/...` branch |
+| Astro/ranking updates merged upstream | `L-4-r-s/doener-rat` / `main` | `YOUR_GITHUB_USERNAME/doener-rat` / your `content/...` branch |
 
 For the upstream pull request, use **compare across forks** if needed and check both repository and branch selectors. [GitHub's fork pull request guide](https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request-from-a-fork) covers these selectors.
 
-In the description, say which restaurant changed, what changed, and that you ran the checks and previewed it. For a content-only change after migration, the PR should contain the content edits, not the entire Astro migration. If the diff is unexpectedly large, recheck the base branch before creating it.
+In the description, say which restaurant changed, what changed, and that you ran the checks and previewed it. For a content-only change after these updates merge, the PR should contain the content edits, not the entire Astro migration. If the diff is unexpectedly large, recheck the base branch before creating it.
 
 Wait for the checks and another contributor's review. A successful push or merge into your fork does not publish to `www.doener-rat.de`. Under the current migration setup, the production maintainer must merge upstream and manually run **Deploy site** on the upstream `main` branch, with Pages configured to use GitHub Actions. Then check the live site too.
 
@@ -339,8 +350,10 @@ Wait for the checks and another contributor's review. A successful push or merge
 | Restaurant missing | Correct branch and project folder? Did you save the JSON? Refresh the browser. Make sure your search is not filtering it out. |
 | Name appears twice | Remove the duplicate JSON object; edit the existing one when publishing a first review or revisiting. |
 | Restaurant name is not clickable | `gesamt` must be a number, e.g. `7.4`, not `"7.4"`. No overall score means no review link. |
-| Wrong rank | Check numeric `gesamt`; JSON file order is irrelevant. The full score determines order, while display is rounded. Names containing `geschlossen` sort last. |
-| Price/weight sorting looks odd | Existing prices/weights are often text; their current sorting can be alphabetical. This content check accepts the existing format and does not change sorting behavior. |
+| Wrong or missing rank | Check numeric `gesamt` and `status: "reviewed"`. Ranks are fixed across search/sorting, ties share a place, and pending/closed entries have no rank. The full score determines rank while display is rounded. |
+| Wrong status badge/filter | Check `status` is exactly `"reviewed"`, `"pending"`, or `"closed"`. Do not rename the restaurant to change its status. |
+| Price/weight sorting looks odd | Use positive numbers or numeric text with a decimal point and no units. Missing values stay last in either direction; closed restaurants remain at the bottom of the combined list. |
+| No visit date displayed | Check `datum` is a real date in `DD.MM.YYYY` format. Pending entries without a visit date show none. |
 | “Für diesen Dönerladen ist keine Story verfügbar” | Exact review filename, capital letters, umlauts, `.md` extension, and saved file location. |
 | Only some photos appear | Missing `_1.jpg`, a numbering gap, wrong capitalization, or a filename prefix that differs from `name`. |
 | Photo has the right name but is broken | Open it as an image and export to actual JPEG; changing an extension is insufficient. |

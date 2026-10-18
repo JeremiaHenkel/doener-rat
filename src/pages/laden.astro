@@ -23,6 +23,10 @@ import Footer from "../components/Footer.astro";
         <header>
           <h1 id="laden-name" class="text-3xl font-bold"></h1>
           <p id="laden-subtitle" class="text-lg text-gray-600 italic mt-1"></p>
+          <div class="mt-2 flex flex-wrap items-center gap-2 text-sm text-gray-600">
+            <span id="laden-status" hidden></span>
+            <time id="laden-visit-date" hidden></time>
+          </div>
         </header>
       </div>
 
@@ -100,6 +104,7 @@ import Footer from "../components/Footer.astro";
   <Footer />
 
   <script is:inline type="module">
+    import { getDisplayName, getStatus, getStatusLabel, visitDate } from './js/ranking.js';
     // Import all necessary functions from firebase.js
     import { 
       postComment, loadInitialComments, loadAllRemainingComments, renderComment,
@@ -222,9 +227,20 @@ import Footer from "../components/Footer.astro";
       document.getElementById("laden-story").innerHTML = marked.parse(storyText);
       
       // Populate the rest of the page
-      document.getElementById("colorstory").textContent = `Das ${laden.name} Erlebnis`;
-      document.getElementById("laden-name").textContent = laden.name;
+      document.getElementById("colorstory").textContent = `Das ${getDisplayName(laden)} Erlebnis`;
+      document.getElementById("laden-name").textContent = getDisplayName(laden);
       document.getElementById("laden-subtitle").textContent = laden.subtitle || "";
+      const statusBadge = document.getElementById('laden-status');
+      statusBadge.className = `restaurant-status status-${getStatus(laden)}`;
+      statusBadge.textContent = getStatusLabel(laden);
+      statusBadge.hidden = false;
+      const date = visitDate(laden);
+      const visitTime = document.getElementById('laden-visit-date');
+      if (date) {
+        visitTime.dateTime = date.iso;
+        visitTime.textContent = `Besucht am ${date.label}`;
+        visitTime.hidden = false;
+      }
       
     // === IMAGE CAROUSEL SETUP (v7.0 - Simplified for .jpg only) ===
     const carouselContainer = document.getElementById("carousel-container");

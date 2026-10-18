@@ -1,9 +1,10 @@
 import { readFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { getDisplayName, getStatus } from '../public/js/ranking.js';
 
 const ratings = ['geschmack', 'präsentation', 'übereinstimmung bestellung', 'service', 'ambiente', 'layering', 'zeit', 'fleisch', 'brot', 'gemüse', 'sauce', 'gesamt'];
-const fields = new Set(['name', 'preis', 'menge', ...ratings, 'besonderheiten', 'subtitle', 'kommentar', 'datum', 'mapsUrl']);
+const fields = new Set(['name', 'status', 'preis', 'menge', ...ratings, 'besonderheiten', 'subtitle', 'kommentar', 'datum', 'mapsUrl']);
 const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 const absent = value => value === undefined || value === '-';
 
@@ -32,6 +33,7 @@ export function validateContent(source, stories, images) {
 
   if (!Array.isArray(shops)) return [...errors, 'doener.json must contain a JSON array: [ ... ].'];
   const names = new Set();
+  const displayNames = new Set();
   shops.forEach((shop, index) => {
     const label = `Entry ${index + 1}${typeof shop?.name === 'string' ? ` (${shop.name})` : ''}`;
     const fail = message => errors.push(`${label}: ${message}`);
@@ -42,6 +44,12 @@ export function validateContent(source, stories, images) {
     const identity = shop.name.normalize('NFC').toLowerCase();
     if (names.has(identity)) fail('duplicate restaurant name (including differences in capitalization).');
     names.add(identity);
+    const displayIdentity = getDisplayName(shop).normalize('NFC').toLowerCase();
+    if (displayNames.has(displayIdentity)) fail('duplicate display name; update the existing restaurant instead of adding another status-suffixed entry.');
+    displayNames.add(displayIdentity);
+    if (shop.status !== undefined && !['reviewed', 'pending', 'closed'].includes(shop.status)) fail('status must be "reviewed", "pending", or "closed".');
+    if (getStatus(shop) === 'reviewed' && typeof shop.gesamt !== 'number') fail('status "reviewed" needs a numeric gesamt score.');
+    if (getStatus(shop) === 'pending' && typeof shop.gesamt === 'number') fail('a scored restaurant cannot be "pending"; set status to "reviewed" or "closed".');
 
     for (const key of Object.keys(shop)) if (!fields.has(key)) fail(`unknown field "${key}"; check its spelling against the guide.`);
     for (const key of ratings) {

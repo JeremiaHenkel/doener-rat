@@ -13,6 +13,7 @@
     "check": "npm run check:content && astro check",
     "check:content": "node scripts/check-content.mjs",
     "test:content": "node --test scripts/check-content.test.mjs",
+    "test:ranking": "node --test scripts/ranking.test.mjs",
     "build": "astro build",
     "preview": "astro preview"
   },

@@ -1,6 +1,7 @@
 [
   {
     "name": "Amed Pizza & Döner",
+    "status": "reviewed",
     "preis": "7.70",
     "geschmack": 4.8,
     "präsentation": 4.7,
@@ -33,6 +34,7 @@
   },
   {
     "name": "Castello Pizza & Dönerhaus",
+    "status": "reviewed",
     "preis": "5",
     "geschmack": 5.4,
     "präsentation": 6.4,
@@ -68,6 +70,7 @@
   },
   {
     "name": "Lezzet-i Mangal",
+    "status": "reviewed",
     "preis": "7",
     "geschmack": 7,
     "präsentation": 8.2,
@@ -107,6 +110,7 @@
   },
   {
     "name": "Stadt Döner - Jawoll Jawoll (geschlossen)",
+    "status": "closed",
     "preis": "7",
     "geschmack": 8.6,
     "präsentation": 8.8,
@@ -142,6 +146,7 @@
   },
   {
     "name": "Südviertel Döner",
+    "status": "reviewed",
     "preis": "8",
     "geschmack": 7,
     "präsentation": 6.9,
@@ -175,6 +180,7 @@
   },
   {
     "name": "Leon's Döner & Pizza",
+    "status": "reviewed",
     "preis": "8",
     "geschmack": 6,
     "präsentation": 7.4,
@@ -209,6 +215,7 @@
   },
   {
     "name": "Memo's Döner Pizzahaus",
+    "status": "reviewed",
     "preis": "7",
     "geschmack": 5.7,
     "präsentation": 6,
@@ -242,6 +249,7 @@
   },
   {
     "name": "Sinan's Kebaphaus",
+    "status": "reviewed",
     "preis": "7.50",
     "geschmack": 4.7,
     "präsentation": 5.6,
@@ -279,6 +287,7 @@
   },
   {
     "name": "Sefa's Döner und Pizzahaus",
+    "status": "reviewed",
     "preis": "8",
     "geschmack": 8,
     "präsentation": 6.7,
@@ -310,6 +319,7 @@
   },
   {
     "name": "Crunchy Kebab",
+    "status": "reviewed",
     "preis": "7.50",
     "geschmack": 7.1,
     "präsentation": 7,
@@ -342,6 +352,7 @@
   },
   {
     "name": "Bay Döner",
+    "status": "reviewed",
     "preis": "7",
     "geschmack": 6,
     "präsentation": 5.5,
@@ -374,6 +385,7 @@
   },
   {
     "name": "Istanbul Döner",
+    "status": "reviewed",
     "preis": "7.50",
     "geschmack": 7.6,
     "präsentation": 6.1,
@@ -408,6 +420,7 @@
   },
   {
     "name": "Helal Döner",
+    "status": "reviewed",
     "preis": "8",
     "geschmack": 6.8,
     "präsentation": 7.4,
@@ -439,6 +452,7 @@
   },
   {
     "name": "Haus des Döners",
+    "status": "reviewed",
     "preis": "8.50",
     "geschmack": 5.4,
     "präsentation": 6.3,
@@ -473,6 +487,7 @@
   },
   {
     "name": "Süleyman Usta",
+    "status": "reviewed",
     "preis": "8",
     "geschmack": 3.4,
     "präsentation": 6,
@@ -507,6 +522,7 @@
   },
   {
     "name": "Frischgenuss",
+    "status": "reviewed",
     "preis": "8.50",
     "geschmack": 6.9,
     "präsentation": 8,
@@ -541,6 +557,7 @@
   },
   {
     "name": "Star Döner & Pizzahaus",
+    "status": "reviewed",
     "preis": "7.50",
     "geschmack": 5.4,
     "präsentation": 6.6,
@@ -574,15 +591,19 @@
     "mapsUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40062.12898684129!2d8.820294728955105!3d50.80362452287223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bc629b460cee6d%3A0x63879dc0829cfb72!2sStar%20D%C3%B6ner%20%26%20Pizzahaus!5e1!3m2!1sde!2sde!4v1784150843266!5m2!1sde!2sde"
   },
   {
-    "name": "Mr. King (demnächst)"
+    "name": "Mr. King (demnächst)",
+    "status": "pending"
   },
   {
-    "name": "Uni Döner (demnächst)"
+    "name": "Uni Döner (demnächst)",
+    "status": "pending"
   },
   {
-    "name": "Royal Döner Kebab und Pizzahaus (demnächst)"
+    "name": "Royal Döner Kebab und Pizzahaus (demnächst)",
+    "status": "pending"
   },
   {
-    "name": "Somat (demnächst)"
+    "name": "Somat (demnächst)",
+    "status": "pending"
   }
 ]
