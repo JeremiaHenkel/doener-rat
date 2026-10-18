@@ -629,7 +629,7 @@
     },
     "subtitle": "",
     "datum": "24.07.2026",
-    "mapsUrl": ""
+    "mapsUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2521.1999761096217!2d8.772440499999998!3d50.808933499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bc630029bd2e5b%3A0xc6f56ebabb929d82!2sUni%20D%C3%B6ner!5e0!3m2!1sen!2snl!4v1792360684084!5m2!1sen!2snl"
   },
   {
     "name": "Royal Döner Kebab und Pizzahaus (demnächst)",
@@ -673,7 +673,7 @@
     },
     "subtitle": "",
     "datum": "21.09.2026",
-    "mapsUrl": ""
+    "mapsUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2521.267891956554!2d8.7715225!3d50.807675100000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bc637ef8fdf185%3A0x2ac9a98a16cb1f0e!2sSomat%20D%C3%B6ner!5e0!3m2!1sen!2snl!4v1792360683310!5m2!1sen!2snl"
   },
   {
     "name": "Euro Döner und Tenders",
@@ -712,6 +712,6 @@
     },
     "subtitle": "",
     "datum": "18.08.2026",
-    "mapsUrl": ""
+    "mapsUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2521.157609044322!2d8.772245!3d50.809718499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bc634fd4b03aa3%3A0xb6b4aaf948df134b!2sEuro%20Doner%20%26%20Tenders!5e0!3m2!1sen!2snl!4v1792360685199!5m2!1sen!2snl"
   }
 ]
