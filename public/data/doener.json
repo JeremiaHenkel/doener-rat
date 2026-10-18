@@ -596,7 +596,40 @@
   },
   {
     "name": "Uni Döner (demnächst)",
-    "status": "pending"
+    "status": "reviewed",
+    "preis": "7.50",
+    "geschmack": 5.8,
+    "präsentation": 5.4,
+    "übereinstimmung bestellung": 10.0,
+    "menge": "521",
+    "service": 7.4,
+    "ambiente": 7.0,
+    "layering": 4.8,
+    "zeit": 8.8,
+    "fleisch": 6.0,
+    "brot": 5.0,
+    "gemüse": 6.5,
+    "sauce": 6.2,
+    "gesamt": 6.2,
+    "besonderheiten": {
+      "positiv": [
+        "Alle fünf Bestellungen wie bestellt",
+        "Schnelle Zubereitung",
+        "Sesam auf dem Brot kam bei einem Tester besonders gut an"
+      ],
+      "negativ": [
+        "Fleischdöner teils gegen Ende sehr trocken",
+        "Brot teiglastig und teils undicht",
+        "Schwaches Layering",
+        "Zutaten in der vollen Theke nicht sichtbar"
+      ],
+      "neutral": [
+        "Falafeldöner mit veganer scharfer Sauce probiert"
+      ]
+    },
+    "subtitle": "",
+    "datum": "24.07.2026",
+    "mapsUrl": ""
   },
   {
     "name": "Royal Döner Kebab und Pizzahaus (demnächst)",

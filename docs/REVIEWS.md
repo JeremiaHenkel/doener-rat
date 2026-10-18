@@ -153,6 +153,8 @@ Keep the field names exactly as shown, including `präsentation`, `gemüse`, and
 
 For an unmeasured category, price, or weight, use `"-"`. Do not invent a score. A restaurant without an overall score belongs in the unreviewed workflow below.
 
+When combining the Rat's raw notes, average the available ratings within each category, giving each tester equal weight. Leave missing or unscored entries out of that category's denominator. Use actual euro prices and gram measurements instead of any additional price/quantity scores. The overall `gesamt` is the mean of the testers' personal overall scores, not the mean of the category scores. Store category means to one decimal, overall means to up to two decimals, and average weights rounded to whole grams. Keep the notes and calculation decisions in `docs/review-sources/`; the [Uni Döner calculation](review-sources/uni-doener-2026-07-24.md) is a worked example.
+
 JSON rules:
 
 - Use ordinary double quotes `"`, not single quotes or Word-style curly quotes.
