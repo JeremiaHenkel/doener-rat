@@ -4,7 +4,7 @@ Stand: 19.10.2026 · Zur Veröffentlichung vorbereitet
 
 Der handgemachte Look bleibt erhalten. Dieses Update verbessert die Rangliste, ergänzt drei Bewertungen und schafft eine gemeinsame Grundlage für die weitere Arbeit an der Seite.
 
-Die [drei Kurzvideos für den Gruppenchat](videos/README.md) zeigen Rangliste, neue Bewertungen, Statusfilter und Scrollverhalten in der lokalen Vorschau.
+Die [vier Kurzvideos für den Gruppenchat](videos/README.md) zeigen Rangliste, neue Bewertungen, Statusfilter und Scrollverhalten in der lokalen Vorschau auf Handy und Desktop.
 
 ## Design und Bedienung
 
