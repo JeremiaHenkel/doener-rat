@@ -1,25 +1,11 @@
-Bei Euro Döner und Tenders haben wir am **18. August 2026** acht Döner getestet, darunter einen Falafeldöner mit Knoblauchsauce. Mit **5 € pro Döner** war der Preis erst einmal erfreulich. Alle Bestellungen wurden so umgesetzt, wie wir sie aufgegeben hatten.
+### Euro Döner und Tenders bricht unter den strengen Blicken des Rates zusammen
 
-### Das Fleisch und die Falafel
+Die Zeit des Besuchs, 19 Uhr, sollte erwähnt werden: Keineswegs könnte man hier von einer Stoßzeit sprechen. Trotzdem hat eine Bestellmenge von acht Dönern den Euro Döner bis an seine Grenzen gebracht.
 
-Beim Fleisch lagen unsere Noten zwischen **1 und 5 Punkten**. In mehreren Notizen tauchen verbrannte Stücke auf. Bei einem Tester waren die ersten Bissen noch solide, bis der verbrannte Geschmack den Rest überlagerte. Zwei von uns waren bei einzelnen Stücken außerdem unsicher, ob sie richtig durchgegart waren. In einer Notiz zum Hähnchen steht entsprechend: „verbrannt & zum Teil Roh?“
+Offensichtlich für alle war schon beim Eintritt der Hähnchenspieß: sehr klein, am Ende seines Lebens und an manchen Stellen bereits sehr dunkel. Mit einem Beil wurde er zerteilt, um jedes letzte Gramm herauszuholen. Das Schwarze war wie erwartet verbrannt, das frisch Abgeschnittene wurde auf demselben Grill erhitzt wie das Brot. Alles vergeblich, um das Fleisch genießbar zu machen. Der Großteil der Döner war nicht bewertbar, der verbrannte Geschmack hat alles überdeckt – und das bei jedem der sieben Mitglieder, die Fleisch gegessen haben.
 
-Der Falafeldöner kam besser weg. Für seinen Geschmack gab es 7 Punkte, für die Falafel selbst ebenfalls 7 und beim Gesamteindruck 6. Der Kommentar dazu war wenig versöhnlich mit dem Fleischspieß: „Wenn man so einen Spieß sieht, halt Falafel bestellen 🤓☝️“
+Dazu kam die Zubereitung selbst. Jeder Döner wurde einzeln gemacht, auf dem Grill lag immer nur ein Brot. Das hat die Zeit natürlich gebottlenecked. Gesagt wurde außerdem nicht ordentlich, was für Soßen es gibt oder dass der eigene Döner erst in 45 Minuten kommt. Der Chef hinter der Theke redet sehr leise und unverständlich. Wahrscheinlich eine eher introvertierte Persönlichkeit, im Laden oft nachteilig. Wer einen netten Plausch mit einem Dönermann sucht, wird hier nicht fündig. Kommunikation war fehl am Platz.
 
-### Brot, Sauce und der Rest
+Ein Döner hat hier teilweise Highlights, etwa die Soße oder die selbst gemachten Falafel. Das einzige wirklich Positive war der Döner mit Falafel und der unscheinbaren Tzatziki-Soße, die überraschend gut war. Das Layering war trotzdem schlecht, das Gemüse nichts Besonderes und fast nicht vorhanden, weil es am Ende einfach ausging. Teilweise wurden einzelne Zwiebelstücke pro Döner verteilt, bei manchen Dönern das Gemüse komplett ausgelassen, ohne nachzufragen. Beim Hähnchen bleibt es ein Desaster.
 
-Das Brot bekam zwischen 2 und 7 Punkten. Ein anfangs krosses Brot wurde durch die wässrige Sauce weich; bei einem anderen Döner war die Pita-Tasche wegen der Saucenverteilung komplett matschig. Dazu kam Extrasauce im Umpapier. Beim Layering lagen sieben der acht Bewertungen bei höchstens 5 Punkten, einer vergab allerdings eine 8.
-
-Die scharfe Sauce bekam ein ausdrückliches Lob für ihre Tomatennote: Sie „scheppert ordentlich“. Bei anderen Dönern übertönte das verbrannte Fleisch die Sauce und das Gemüse so stark, dass beides geschmacklich kaum noch ankam. Ein Tester bemängelte außerdem, dass das Gemüse kaum Biss hatte. Ein Tester bestellte „ohne alles“; von ihm gibt es keine Gemüsewertung.
-
-### Menge, Service und Wartezeit
-
-Unsere acht Döner wogen zwischen **425 und 564 Gramm**, im Durchschnitt rund **516 Gramm**. Für 5 € ist das eine ordentliche Menge.
-
-Bei der Zeit gab es dagegen von allen acht Testern **0 Punkte**. Einer notierte **41 Minuten**. Das ist die gemessene Wartezeit dieses Testers; die Notizen enthalten keine gemeinsame Durchschnittswartezeit. Auch DNF-Vermerke finden sich auf den Bewertungszetteln.
-
-Der Service bekam mit 6 bis 10 Punkten deutlich bessere Noten. „Stets bemüht“ stand neben einer 10. Beim Ambiente lagen wir zwischen 3 und 7 Punkten; wenig Platz wurde ausdrücklich bemängelt.
-
-### Fazit
-
-Der günstige Preis und die Portionen helfen Euro Döner, die Fleischbewertungen und die Wartezeit ziehen ihn deutlich herunter. Der Falafeldöner schnitt beim Geschmack besser ab als sämtliche Fleischdöner in unserer Runde. Aus den acht persönlichen Gesamteindrücken wird eine **Gesamtwertung von 4,25 Punkten**, auf der Rangliste als **4,3** angezeigt.
+Noch ein Highlight für den Spaß ist die hauseigene Website: von über 20 Jahre alten Google-Bildern von Essen bis zu neuartig schlecht generierten AI-Bildern, durchweg falsch beschriftet. Sie spiegelt den Status des Ladens selber wider.

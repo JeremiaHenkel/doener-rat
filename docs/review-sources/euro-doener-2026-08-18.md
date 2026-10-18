@@ -29,7 +29,7 @@ Berechnungsgrundlage: die acht vom Rat übermittelten Bewertungen, in der Reihen
 - Die 41 Minuten stammen von Bewertung 8. Eine andere Notiz nennt 1:08 für einen einzelnen später nachbestellten Döner. Beides sind Einzelangaben und keine gemeinsame durchschnittliche Wartezeit. DNF-Vermerke werden nicht in erfundene Minutenwerte übersetzt.
 - Gemüse aus Bewertung 4 (`ndf`) bleibt ohne Wert: `(4 + 4 + 3 + 5 + 4 + 4 + 5) / 7 = 4,142857…`, gespeichert als 4,1.
 - Die ausdrücklich abgegebene Falafelwertung von 7 wird wie bei Uni Döner als Bewertung der Füllung in der bestehenden Kategorie berücksichtigt: `(5 + 2 + 1 + 4 + 2 + 7 + 1 + 5) / 8 = 3,375`, gespeichert als 3,4. Die sieben reinen Fleischwerte hätten einen Mittelwert von rund 2,86; der Reviewtext unterscheidet deshalb Fleisch und Falafel.
-- Die Hinweise auf möglicherweise nicht durchgegartes Fleisch bleiben als Unsicherheit der Tester formuliert. Aus den Fotos wird keine Aussage über den Garzustand abgeleitet.
+- Die ursprünglichen Notizen enthalten Unsicherheit darüber, ob einzelne Fleischstücke vollständig durchgegart waren. Der öffentliche Reviewtext wurde später durch den fertigen Text des Rats aus `Somat, 21.09.26` ersetzt. Es wurden keine Aussagen über den Garzustand aus den Fotos ergänzt.
 - Die Notizen bewerten Döner und Falafeldöner. Für namensgebende Tenders liegt hier keine eigene Bewertung vor.
 
 ## Fotos

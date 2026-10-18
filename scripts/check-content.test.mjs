@@ -51,15 +51,18 @@ test('validates status and rejects a second entry with the same display name', (
   assert.deepEqual(check([{ ...review, status: 'reviewed' }]), []);
   assert.deepEqual(check([{ ...review, status: 'closed' }]), []);
   assert.deepEqual(check([{ name: 'Pending', status: 'pending' }]), []);
+  assert.deepEqual(check([{ name: 'Closed before review', status: 'closed' }]), []);
   assert.match(check([{ ...review, status: 'pending' }]).join(), /cannot be "pending"/);
   assert.match(check([{ name: 'Pending', status: 'reviewed' }]).join(), /needs a numeric gesamt/);
   assert.match(check([{ ...review, status: 'open' }]).join(), /status must be/);
   assert.match(check([{ name: 'Pending' }, { name: 'Pending (demnächst)' }]).join(), /duplicate display name/);
 });
 
-test('accepts an explicit zero time score while preserving the other score ranges', () => {
+test('accepts explicit zero time and service scores while preserving the other score ranges', () => {
   assert.deepEqual(check([{ ...review, zeit: 0 }]), []);
+  assert.deepEqual(check([{ ...review, service: 0 }]), []);
   assert.match(check([{ ...review, zeit: -1 }]).join(), /zeit must be a number from 0 to 10/);
+  assert.match(check([{ ...review, service: -1 }]).join(), /service must be a number from 0 to 10/);
   assert.match(check([{ ...review, geschmack: 0 }]).join(), /geschmack must be a number from 1 to 10/);
   assert.match(check([{ ...review, gesamt: 0 }]).join(), /gesamt must be a number from 1 to 10/);
 });

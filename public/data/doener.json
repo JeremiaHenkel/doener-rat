@@ -633,11 +633,47 @@
   },
   {
     "name": "Royal Döner Kebab und Pizzahaus (demnächst)",
-    "status": "pending"
+    "status": "closed"
   },
   {
     "name": "Somat (demnächst)",
-    "status": "pending"
+    "status": "reviewed",
+    "preis": "7.60",
+    "geschmack": 6.6,
+    "präsentation": 6.4,
+    "übereinstimmung bestellung": 10,
+    "menge": "471",
+    "service": 3.2,
+    "ambiente": 8,
+    "layering": 5.8,
+    "zeit": 4.5,
+    "fleisch": 6,
+    "brot": 5,
+    "gemüse": 6.4,
+    "sauce": 7,
+    "gesamt": 6.8,
+    "besonderheiten": {
+      "positiv": [
+        "Große vegetarische und vegane Auswahl",
+        "Frisch wirkende Zutaten",
+        "Angenehmer Laden mit Pflanzen und hohen Decken",
+        "Knoblauchsauce schmeckt deutlich nach Knoblauch",
+        "Bar- und Kartenzahlung"
+      ],
+      "negativ": [
+        "Brot zäh, dünn und zu klein für die Füllung",
+        "Zutaten teils schlecht verteilt",
+        "Teilweise sehr dicke Hähnchenstücke",
+        "Zwei bereits bezahlte Bestellungen vergessen"
+      ],
+      "neutral": [
+        "Hähnchen als einzige Fleischoption",
+        "Fleisch- und Seitan-Döner 8 €, ein Döner ohne Fleisch 6 €"
+      ]
+    },
+    "subtitle": "",
+    "datum": "21.09.2026",
+    "mapsUrl": ""
   },
   {
     "name": "Euro Döner und Tenders",

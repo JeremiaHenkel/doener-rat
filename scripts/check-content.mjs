@@ -54,7 +54,7 @@ export function validateContent(source, stories, images) {
     for (const key of Object.keys(shop)) if (!fields.has(key)) fail(`unknown field "${key}"; check its spelling against the guide.`);
     for (const key of ratings) {
       const value = shop[key];
-      const minimum = key === 'zeit' ? 0 : 1;
+      const minimum = ['zeit', 'service'].includes(key) ? 0 : 1;
       if (!absent(value) && (typeof value !== 'number' || !Number.isFinite(value) || value < minimum || value > 10)) {
         fail(`${key} must be a number from ${minimum} to 10 without quotes, or "-" when unknown.`);
       }

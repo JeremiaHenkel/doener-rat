@@ -1,21 +1,13 @@
-Beim Uni Döner haben wir am 24. Juli 2026 fünf Döner für jeweils **7,50 €** getestet, darunter einen Falafeldöner mit veganer scharfer Sauce. Alle fünf Bestellungen kamen so an, wie wir sie aufgegeben hatten. Bei der Theke wurde es allerdings schwierig: Sie war so voll, dass man die Zutaten nicht sehen konnte.
+### Uni Döner, im Herzen des Döner-Dreiecks, oder doch in der Sahara?
 
-### Der Döner im Detail
+Seit dem Schließen einer vorherigen Marburger Legende, des Berekets, steht an dessen Standort der Uni Döner. Jeder Marburger, der nachts um 4 aus dem KFZ kam oder aus dem Bierwerk entkommen ist, kennt den Satz: „Lass mal noch einen Döner holen.“ In Frage kommen dann eigentlich nur noch zwei: Mr. King oder Uni Döner. Wer beim Uni Döner landet, bekommt nicht den besten Döner der Stadt, aber auch nicht den allerschlechtesten. Zum Ausnüchtern sollte die Flasche Wasser trotzdem bereitstehen. Sonst geht er nicht runter.
 
-Über das Brot waren wir uns ausgesprochen uneinig. Alle hatten dasselbe Brot, die Noten reichten trotzdem von **3 bis 9 Punkten**. Unser Falafeltester war vom Sesam auf dem Brot begeistert: „Das Sesam ist geil.“ Andere fanden die kleine Pita-Tasche vor allem teiglastig. Dazu kam ein Loch im Brot, durch das die Sauce unten wieder herauslief. Bei einem anderen Döner fiel der Inhalt seitlich heraus. Die Frage aus den Notizen bleibt berechtigt: „Wieso wird das Dreieck so verschmäht?“
+Der Rat war an einem Wochentag gegen 19 Uhr da. Draußen steht bereits die erste Überraschung: ein Kaffeeladen-Schild mit „Catalando“. Das Lokal ist niemandem bekannt, für 1,50 € wäre es aber ein günstiger Kaffee to go. Der Laden selbst ist nicht auffindbar; wer ihn kennt, darf es in die Kommentare schreiben.
 
-Trotz der auslaufenden Sauce wurden mehrere Fleischdöner beim Essen ziemlich trocken. Bei einem von uns ging gegen Ende deshalb kaum noch etwas. Jeremias Urteil fiel entsprechend knapp aus: „Trockenster Döner EUW.“ Auch das Layering überzeugte wenig; die einzelnen Bewertungen lagen hier zwischen 3 und 7 Punkten.
+Innen gibt der Uni Döner gute Dönerladen-Vibes. Zum Sitzen taugt die Einrichtung kaum, gesetzt wird eher auf Laufkundschaft. Auf der Karte stehen Hähnchen, Kalbfleisch und vegane Falafel, dazu vegane Soßen, darunter eine scharfe. Das ist ein Plus für vegane Döneresser. Der Service war durchweg nett, die Bestellzeit relativ kurz. Der Laden kennt Wellen an Bestellungen; nachts, mit mehr Besetzung, geht es bestimmt noch schneller. Genau darauf scheint er zu setzen: betrunkene Nachtkundschaft, die einfach einen Döner will und nicht großartig enttäuscht werden möchte.
 
-Beim Fleisch lagen die Noten zwischen 5 und 7, die Falafel bekam 6 Punkte. Die Joghurtsauce wurde unter anderem ordentlich scharf bestellt, beim Falafeldöner gab es die vegane scharfe Sauce. Die Saucenbewertungen reichten von 5 bis 8 Punkten. Die Präsentation bekam zwischen 4 und 7 Punkten, inklusive einer Portion Extrasauce im Umpapier.
+Das Brot ist eine Taschenvariante mit Sesam, Standard-Aufback. Wird es falsch aufgebacken oder danach falsch getoastet, bricht die Integrität des Döners. Bei vielen ist das Brot unten oder an den Seiten aufgerissen, Ober- oder Unterteile haben sich komplett aufgelöst, die Esserfahrung war entsprechend schlecht. Dazu kommt schlechtes Layering: zu viel Soße an den falschen Stellen – und der Döner schafft es trotzdem, trocken zu sein.
 
-Beim Gemüse gingen die Meinungen ebenfalls auseinander. Bjarne hat besonders die Gurke gefeiert: „Gurke hat gut geballert.“ Tim hatte seinen Döner „ohne alles“ bestellt; von ihm gibt es keine Gemüsebewertung.
+Genau die Trockenheit war das zentrale Problem, beim Fleisch und am ganzen Döner. Der Rat spricht sich vor dem Testen kaum ab, schreibt erst unabhängig und diskutiert danach. Die Trockenheit haben trotzdem schon während des Essens viele bemängelt; ohne Getränk war er teilweise einfach nicht essbar. Geschmacklich bleibt das Fleisch Standard. Das Gemüse war relativ frisch und ein Highlight. Die Soße spaltet: für manche gut, für manche schlecht, es kommt auf die Wahl an. Die scharfen Soßen scheinen sehr gut zu sein. Das Gewicht war stark für die mittlerweile fast üblichen 7,50 €, der Preis selbst bleibt trotzdem traurig – das kann man dem Laden kaum noch allein zuschreiben.
 
-### Menge und Tempo
-
-Die fünf Döner wogen **449, 525, 540, 545 und 545 Gramm**. Das ergibt im Durchschnitt rund **521 Gramm** für **7,50 €**.
-
-Auch das Tempo kam mit 8 bis 9 Punkten gut weg. Für einen einzelnen, später nachbestellten Döner wurden **1 Minute und 8 Sekunden** notiert. Der Service lag bei 7 bis 8 Punkten, das Ambiente bei 6 bis 9.
-
-### Fazit
-
-Alle Bestellungen stimmten, die Zubereitung war flott und die Portionen ordentlich. Beim Brot gingen unsere Meinungen weit auseinander, während Trockenheit und schwaches Layering mehrere Fleischdöner ausbremsten. Unsere fünf Gesamteindrücke lagen bei **5, 7, 6, 7 und 6 Punkten**. Daraus werden **6,2 Punkte für Uni Döner**.
+Für manche reicht das, für manche nicht. Wer enttäuscht ist, geht zum Konkurrenten Mr. King. Für kultiviertere Döneresser ist der Uni Döner kein Highlight und keine Empfehlung. An der Technik der Zubereitung und an der Qualität der Lebensmittel muss klar gearbeitet werden.
