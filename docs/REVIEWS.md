@@ -29,23 +29,49 @@ Use real spaces and umlauts in filenames. Do not replace them with URL escapes s
 
 ## 1. Start a content branch
 
-On this computer the migrated checkout is:
+### One-time setup for each contributor
+
+Install Git and Node.js 22.22 or newer; the project CI uses Node.js 24. Sign in to your own GitHub account. For the fork workflow below, create a fork of [L-4-r-s/doener-rat](https://github.com/L-4-r-s/doener-rat) under that account if you do not already have one.
+
+**Replace `YOUR_GITHUB_USERNAME` in every example with your own GitHub username.** In this workflow, contributors clone and push to their own forks. The shared project stays at `L-4-r-s/doener-rat`.
+
+If you own the shared repository or already have write access, you can use it directly instead of creating a fork. In that case, replace `YOUR_GITHUB_USERNAME` with `L-4-r-s` in the clone command, push command, and pull request's head repository below. Still create a content branch and submit a pull request.
+
+In a terminal, go to the folder where you want to keep projects, then clone your fork:
 
 ```bash
-cd /home/mraerozz/Repos/doener-rat-astro
+git clone https://github.com/YOUR_GITHUB_USERNAME/doener-rat.git
+cd doener-rat
+```
+
+You choose the parent folder; there is no required location on your computer. These commands work in a terminal on Windows, macOS, or Linux with Git and Node.js installed.
+
+If you already have a checkout, skip cloning and open a terminal in that checkout's project root: the folder containing `package.json` and `README.md`. Its folder name may be different. You can confirm the root with:
+
+```bash
+git rev-parse --show-toplevel
+```
+
+All remaining commands run from that project root. All file paths in this guide, such as `public/data/doener.json`, are relative to that root.
+
+### Start each content change
+
+Check the current branch and whether there are unfinished changes:
+
+```bash
 git status --short --branch
 ```
 
 If changed or untracked files appear, finish or save that work before switching branches. Do not discard changes to get a clean status.
 
-**While the migration is still being reviewed**, start from its latest branch:
+**While the migration is still being reviewed**, start from its latest branch. `JeremiaHenkel/doener-rat` is the temporary shared location of that migration branch; it is the same source for every contributor:
 
 ```bash
 git fetch https://github.com/JeremiaHenkel/doener-rat.git chore/astro-foundation
 git switch -c content/review-beispiel FETCH_HEAD
 ```
 
-**After the migration has been merged into your friend's `main`**, use this instead:
+**After the migration has been merged into the shared project's `main`**, use this instead:
 
 ```bash
 git fetch https://github.com/L-4-r-s/doener-rat.git main
@@ -54,20 +80,13 @@ git switch -c content/review-beispiel FETCH_HEAD
 
 Choose a new branch name for each change, for example `content/update-crunchy-price` or `content/remove-beispiel`. Run one of the two alternatives above, according to whether the migration has been merged.
 
-On another computer, first clone your fork and enter its folder, then use the appropriate branch commands above:
-
-```bash
-git clone https://github.com/JeremiaHenkel/doener-rat.git
-cd doener-rat
-```
-
 Install dependencies when setting up a new checkout or after pulling a changed lockfile:
 
 ```bash
 npm ci
 ```
 
-Use Node.js 22.22 or newer; the project CI uses Node.js 24. The guide assumes Git and Node.js are installed and GitHub authentication is working.
+Use your own GitHub account when Git asks you to authenticate. If you cannot push, check that the destination belongs to your account and that Git is authenticated as that account.
 
 ## 2. Add a new reviewed restaurant
 
@@ -292,25 +311,25 @@ git add public/data/doener.json public/stories public/images src/pages/index.ast
 git diff --cached --stat
 git diff --cached
 git commit -m "Add Beispiel Döner review"
-git push https://github.com/JeremiaHenkel/doener-rat.git HEAD
+git push https://github.com/YOUR_GITHUB_USERNAME/doener-rat.git HEAD
 ```
 
 Use a commit message that describes the actual change. The `git add` command records additions, edits, and deletions under the listed paths. Check the staged diff for unrelated edits before committing. If Git says `Author identity unknown`, configure your own Git name and your verified or GitHub-provided no-reply email for this checkout, then repeat the commit.
 
-The push uses your fork's full URL deliberately: this computer currently has `origin` pointing to your friend's repository and `fork` pointing to yours; a fresh clone of your fork normally uses `origin` for your own repository.
+Replace `YOUR_GITHUB_USERNAME` before running the push command. It sends the current content branch to your fork (or to the shared repository if you chose the write-access workflow above). Using the full URL avoids depending on local remote names such as `origin`, `upstream`, or `fork`, which can differ between contributors. To inspect your checkout's configured remotes, run `git remote -v`.
 
 Open a pull request on GitHub with the correct target:
 
 | Project state | Base repository / branch | Head repository / branch |
 | --- | --- | --- |
-| Migration still being reviewed | `JeremiaHenkel/doener-rat` / `chore/astro-foundation` | `JeremiaHenkel/doener-rat` / your `content/...` branch |
-| Migration merged upstream | `L-4-r-s/doener-rat` / `main` | `JeremiaHenkel/doener-rat` / your `content/...` branch |
+| Migration still being reviewed | `JeremiaHenkel/doener-rat` / `chore/astro-foundation` | `YOUR_GITHUB_USERNAME/doener-rat` / your `content/...` branch |
+| Migration merged upstream | `L-4-r-s/doener-rat` / `main` | `YOUR_GITHUB_USERNAME/doener-rat` / your `content/...` branch |
 
 For the upstream pull request, use **compare across forks** if needed and check both repository and branch selectors. [GitHub's fork pull request guide](https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request-from-a-fork) covers these selectors.
 
 In the description, say which restaurant changed, what changed, and that you ran the checks and previewed it. For a content-only change after migration, the PR should contain the content edits, not the entire Astro migration. If the diff is unexpectedly large, recheck the base branch before creating it.
 
-Wait for the checks and your friends' review. A successful push or merge into your fork does not publish to `www.doener-rat.de`. Under the current migration setup, the production maintainer must merge upstream and manually run **Deploy site** on the upstream `main` branch, with Pages configured to use GitHub Actions. Then check the live site too.
+Wait for the checks and another contributor's review. A successful push or merge into your fork does not publish to `www.doener-rat.de`. Under the current migration setup, the production maintainer must merge upstream and manually run **Deploy site** on the upstream `main` branch, with Pages configured to use GitHub Actions. Then check the live site too.
 
 ## Troubleshooting
 
