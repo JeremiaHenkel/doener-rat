@@ -39,7 +39,9 @@ public/
 
 Astro generates static HTML. Tailwind builds the styles through Vite. The existing browser JavaScript still handles sorting, search, the image carousel, and Firebase community interactions. The shared templates use TypeScript for their props.
 
-To add or update a review, edit `public/data/doener.json`, the matching file in `public/stories/`, and the shop photos in `public/images/`. Keep the existing shop names and photo naming convention: shop names also identify the Firebase comments and ratings.
+For step-by-step instructions to add a review, edit ratings, add or delete a restaurant, and publish changes, read **[the review and restaurant guide](docs/REVIEWS.md)**. It includes a complete example, photo rules, a pre-publication checklist, and troubleshooting.
+
+Run `npm run check:content` after content changes. It checks the JSON, field names, scores, duplicate restaurant names, exact review filenames, and photo numbering. `npm run check` includes this check, and CI runs it too.
 
 ## Hosting
 

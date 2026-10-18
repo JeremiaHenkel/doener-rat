@@ -10,7 +10,9 @@
   "scripts": {
     "dev": "astro dev",
     "watch": "astro dev",
-    "check": "astro check",
+    "check": "npm run check:content && astro check",
+    "check:content": "node scripts/check-content.mjs",
+    "test:content": "node --test scripts/check-content.test.mjs",
     "build": "astro build",
     "preview": "astro preview"
   },
