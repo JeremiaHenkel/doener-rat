@@ -49,7 +49,7 @@ Run `npm run check:content` after content changes. It checks the JSON, field nam
 
 The production output is `dist/`. The build keeps the current URLs, including `index.html`, `laden.html?name=…`, `stats.html`, `impressum.html`, and `datenschutz.html`. Static assets keep their existing URLs too.
 
-GitHub Pages must serve the built output rather than the source branch once this migration is merged. The check workflow validates pull requests without publishing them. For the production repository, select **GitHub Actions** in Pages settings and manually run the **Deploy site** workflow on `main`. This workflow is restricted to the original repository and never runs automatically. Coordinate the Pages settings change with the merge and first deployment. See [Astro's GitHub Pages guide](https://docs.astro.build/en/guides/deploy/github/).
+The original repository currently publishes `main` from the repository root through GitHub Pages. **Before merging the Astro migration, switch Pages → Source to GitHub Actions.** Keeping the old source setting could publish an incomplete site because the HTML now needs to be built. After merging and passing checks, manually run **Deploy site** on `main`. This workflow is restricted to the original repository and never runs automatically, including for subsequent content updates. The check workflow validates changes without publishing them. Follow the [first-deployment and rollback guide](docs/DEPLOYMENT.md) for the full sequence. See also [Astro's GitHub Pages guide](https://docs.astro.build/en/guides/deploy/github/).
 
 For a Pages preview under a repository subpath, build with the corresponding base:
 

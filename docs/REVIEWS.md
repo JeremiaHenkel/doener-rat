@@ -347,7 +347,7 @@ For the upstream pull request, use **compare across forks** if needed and check 
 
 In the description, say which restaurant changed, what changed, and that you ran the checks and previewed it. For a content-only change after these updates merge, the PR should contain the content edits, not the entire Astro migration. If the diff is unexpectedly large, recheck the base branch before creating it.
 
-Wait for the checks and another contributor's review. A successful push or merge into your fork does not publish to `www.doener-rat.de`. Under the current migration setup, the production maintainer must merge upstream and manually run **Deploy site** on the upstream `main` branch, with Pages configured to use GitHub Actions. Then check the live site too.
+Wait for the checks and another contributor's review. A successful push or merge into your fork does not publish to `www.doener-rat.de`. **Before the first upstream merge of the Astro migration, the maintainer must switch Pages from branch publishing to GitHub Actions.** Otherwise, the existing configuration could publish the source tree without its built HTML. Follow the [first-deployment and rollback guide](DEPLOYMENT.md). After merging and passing checks, the maintainer manually runs **Deploy site** on upstream `main`. Later content merges also require that manual deployment, but no further Pages source change. Then check the live site too.
 
 ## Troubleshooting
 
