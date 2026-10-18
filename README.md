@@ -1,77 +1,60 @@
 # Dönerrat Marburg
 
-A clean, interactive platform for exploring and rating Döner Kebaps in Marburg, Germany. The project features a detailed rating database, written reviews, interactive user ratings, and community comments.
+Döner reviews, ratings, and photos from Marburg and Mittelhessen.
 
----
+## Development
 
-## 📁 Repository Structure
+Use Node.js 22.22 or newer (Node.js 24 is used in CI).
 
-Below is an overview of the key folders and files in the repository:
-
-```text
-├── .vscode/               # Editor configurations
-├── background/           # Dynamic background-related assets
-├── css/
-│   ├── input.css          # Source Tailwind CSS definitions
-│   └── styles.css         # Compiled stylesheet (built via Tailwind CLI)
-├── data/
-│   └── doener.json        # Main database of kebab shops and official ratings
-├── images/                # Site assets, shop photos (formatted as [Name]_[Index].jpg)
-├── js/
-│   ├── firebase.js        # Firebase Firestore logic (comments, upvotes, ratings)
-│   └── script.js          # Core frontend logic (table sorting, filtering, modals)
-├── stories/               # Text reviews for individual shops in Markdown (.md) format
-├── convert_to_jpg.py      # Helper script for processing/converting review photos
-├── datenschutz.html       # GDPR privacy policy page
-├── impressum.html         # Legal disclosure (Impressum) page
-├── index.html             # Main landing page featuring the interactive leaderboard
-├── laden.html             # Dynamic template page for individual shop profiles
-├── stats.html             # Statistics dashboard
-└── todo.md                # List of planned features and improvements
+```bash
+npm ci
+npm run dev
 ```
 
----
+Open the local URL printed by Astro. Changes to pages and styles reload automatically.
 
-## 🛠️ Tech Stack & Integrations
+```bash
+npm run check    # Check Astro templates and TypeScript
+npm run build    # Generate the static site in dist/
+npm run preview  # Serve the production build locally
+```
 
-* **Frontend:** Vanilla HTML5, CSS, and modern ES6 JavaScript.
-* **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) (using the `@tailwindcss/cli`).
-* **Backend Database:** [Google Firebase Firestore](https://firebase.google.com/) for handling:
-  * Anonymous unique user ratings (1-10 scale).
-  * Community comments and a Firestore-incremented comment upvote system.
-* **Libraries:** [Marked.js](https://marked.js.org/) for rendering Markdown stories on-the-fly inside the detail pages.
+`npm run watch` is an alias for the development server.
 
----
+## Project structure
 
-## 🚀 Getting Started
+```text
+src/
+  pages/          # Ranking, shop details, statistics, and legal pages
+  layouts/        # HTML document, page metadata, and stylesheet
+  components/     # Shared background and footer
+  styles/         # Tailwind source and the existing custom styles
+public/
+  data/           # doener.json: official shop information and ratings
+  stories/        # Markdown reviews
+  images/         # Original photos, backgrounds, and graphics
+  js/             # Existing ranking and Firebase browser scripts
+  background/     # Asset license information
+```
 
-### Prerequisites
-Make sure you have [Node.js](https://nodejs.org/) installed to build stylesheet assets.
+Astro generates static HTML. Tailwind builds the styles through Vite. The existing browser JavaScript still handles sorting, search, the image carousel, and Firebase community interactions. The shared templates use TypeScript for their props.
 
-### Development Setup
-1. Clone this repository to your local machine:
-   ```bash
-   git clone https://github.com/L-4-r-s/doener-rat.git
-   cd doener-rat
-   ```
+To add or update a review, edit `public/data/doener.json`, the matching file in `public/stories/`, and the shop photos in `public/images/`. Keep the existing shop names and photo naming convention: shop names also identify the Firebase comments and ratings.
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+## Hosting
 
-3. Run the Tailwind watcher during development:
-   ```bash
-   npm run watch
-   ```
+The production output is `dist/`. The build keeps the current URLs, including `index.html`, `laden.html?name=…`, `stats.html`, `impressum.html`, and `datenschutz.html`. Static assets keep their existing URLs too.
 
-4. Build the minified CSS for production:
-   ```bash
-   npm run build
-   ```
+GitHub Pages must serve the built output rather than the source branch once this migration is merged. The check workflow validates pull requests without publishing them. For the production repository, select **GitHub Actions** in Pages settings and manually run the **Deploy site** workflow on `main`. This workflow is restricted to the original repository and never runs automatically. Coordinate the Pages settings change with the merge and first deployment. See [Astro's GitHub Pages guide](https://docs.astro.build/en/guides/deploy/github/).
 
-5. Start a local server using Python:
-   ```bash
-   python -m http.server
-   ```
-   Once started, navigate to [http://localhost:8000/](http://localhost:8000/) in your web browser to view the application.
+For a Pages preview under a repository subpath, build with the corresponding base:
+
+```bash
+ASTRO_BASE_PATH=/doener-rat/ npm run build
+```
+
+`public/CNAME` contains the existing production domain. Use that file only for the production deployment; omit it from a fork's Pages deployment.
+
+## Migration scope
+
+This first migration preserves the published site's layout, wording, photos, review files, Firebase integration, and browser behavior. It adds shared templates, a development server, a production build, TypeScript checks, and CI. Design changes and further refactoring can be reviewed in later pull requests.

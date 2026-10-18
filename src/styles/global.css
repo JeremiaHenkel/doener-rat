@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography"; /* Adds the 'prose' classes to your build */
-@source "../*.html";
+@source "../**/*.astro";
+@source "../../public/js/*.js";
 
 /* Klasse für kontrollierten Zeilenumbruch auf Desktops */
 .allow-wrap {
